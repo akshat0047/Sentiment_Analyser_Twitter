@@ -12,7 +12,7 @@ class PreProcessTweets:
     def processTweets(self, list_of_tweets):
         processedTweets = []
         for tweet in list_of_tweets:
-            processedTweets.append((self._processTweet(tweet["text"]), 
+            processedTweets.append((self._processTweet(tweet["text"]),
                                     tweet["label"]))
         return processedTweets
 

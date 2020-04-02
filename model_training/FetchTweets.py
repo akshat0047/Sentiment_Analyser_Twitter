@@ -1,4 +1,4 @@
-def buildTrainingSet(corpusFile, tweetDataFile):
+def buildTrainingSet(corpusFile, tweetDataFile, api):
     import csv
     import time
 
@@ -23,7 +23,7 @@ def buildTrainingSet(corpusFile, tweetDataFile):
             trainingDataSet.append(tweet)
             time.sleep(sleep_time)
 
-        except: 
+        except Exception as e:
             continue
 
     # Writing tweets to CSV File
@@ -36,4 +36,5 @@ def buildTrainingSet(corpusFile, tweetDataFile):
                                      tweet["label"], tweet["topic"]])
             except Exception as e:
                 print(e)
+
     return trainingDataSet
